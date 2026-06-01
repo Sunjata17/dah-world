@@ -110,9 +110,9 @@ const CD={
 "288":{name:"Ghana",region:"West",flag:"gh",cap:"Accra",pop:"32M",area:"239K km2",fact:"First sub-Saharan nation to gain independence (1957). Ancient Ghana Empire dominated the Sahel.",color:"#70C080"},
 "384":{name:"Cote dIvoire",region:"West",flag:"ci",cap:"Yamoussoukro",pop:"27M",area:"322K km2",fact:"Kong Empire and Dyula trade networks made this a center of West African commerce.",color:"#58B070"},
 "324":{name:"Guinea",region:"West",flag:"gn",cap:"Conakry",pop:"13M",area:"246K km2",fact:"Part of the ancient Mali Empire. Holds 30% of the world's bauxite reserves.",color:"#A8D4A8"},
-"694":{name:"S. Leone",region:"West",flag:"sl",cap:"Freetown",pop:"8M",area:"72K km2",fact:"Freetown was founded by freed enslaved Africans in 1787 — a site of memory and resilience.",color:"#80C090"},
+"694":{name:"Sierra Leone",region:"West",flag:"sl",cap:"Freetown",pop:"8M",area:"72K km2",fact:"Freetown was founded by freed enslaved Africans in 1787 — a site of memory and resilience.",color:"#80C090"},
 "430":{name:"Liberia",region:"West",flag:"lr",cap:"Monrovia",pop:"5M",area:"111K km2",fact:"Founded 1822 by freed Americans. Never fully colonized. Ancient Poro and Sande secret societies.",color:"#5AAA78"},
-"624":{name:"G-Bissau",region:"West",flag:"gw",cap:"Bissau",pop:"2M",area:"36K km2",fact:"Part of the ancient Kaabu Kingdom. Bijagos Archipelago hosts unique matriarchal island cultures.",color:"#90D4A0"},
+"624":{name:"Guinea-Bissau",region:"West",flag:"gw",cap:"Bissau",pop:"2M",area:"36K km2",fact:"Part of the ancient Kaabu Kingdom. Bijagos Archipelago hosts unique matriarchal island cultures.",color:"#90D4A0"},
 "686":{name:"Senegal",region:"West",flag:"sn",cap:"Dakar",pop:"17M",area:"197K km2",fact:"Jolof Empire dominated for centuries. Goree Island is a UNESCO slave trade memorial.",color:"#68B880"},
 "270":{name:"The Gambia",region:"West",flag:"gm",cap:"Banjul",pop:"2.5M",area:"11K km2",fact:"Africa's smallest mainland nation. Ancient stone circles here predate Stonehenge.",color:"#B0E0B8"},
 "132":{name:"Cape Verde",region:"West",flag:"cv",cap:"Praia",pop:"560K",area:"4K km2",fact:"Uninhabited until 1456. Atlantic crossroads of African, Portuguese, and Creole cultures.",color:"#78C888"},
@@ -195,10 +195,10 @@ d3.json("/countries-110m.json").then(world=>{
     let name=info.name;
     if(w<22&&name.length>6)return;
     if(w<50&&name.length>12)name=name.split(" ").map(p=>p[0]+".").join("");
-    const fs=Math.max(6.5,Math.min(w/(name.length*0.7),h/2.8,13));
+    const offsets={"Cote dIvoire":[0,-12],"Ghana":[8,10],"Benin":[-8,-8],"Guinea-Bissau":[0,0],"Sierra Leone":[0,0]};const off=offsets[info.name]||[0,0];const fs=Math.max(6.5,Math.min(w/(name.length*0.7),h/2.8,13));
     const tw=name.length*fs*0.63+10,th=fs+7;
-    g.append("rect").attr("x",c[0]-tw/2).attr("y",c[1]-th/2).attr("width",tw).attr("height",th).attr("rx",2).attr("fill","#0a0a06").attr("opacity",0.85).attr("pointer-events","none");
-    g.append("text").attr("x",c[0]).attr("y",c[1]).attr("text-anchor","middle").attr("dominant-baseline","middle").attr("font-family","Space Mono,monospace").attr("font-weight","700").attr("font-size",fs).attr("fill","#ffffff").attr("pointer-events","none").text(name);
+    g.append("rect").attr("x",c[0]+off[0]-tw/2).attr("y",c[1]+off[1]-th/2).attr("width",tw).attr("height",th).attr("rx",2).attr("fill","#0a0a06").attr("opacity",0.85).attr("pointer-events","none");
+    g.append("text").attr("x",c[0]+off[0]).attr("y",c[1]+off[1]).attr("text-anchor","middle").attr("dominant-baseline","middle").attr("font-family","Space Mono,monospace").attr("font-weight","700").attr("font-size",fs).attr("fill","#ffffff").attr("pointer-events","none").text(name);
   });
 });
 </script>
