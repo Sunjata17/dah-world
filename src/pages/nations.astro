@@ -194,7 +194,7 @@ d3.json("/countries-110m.json").then(world=>{
     const c=pathGen.centroid(f);if(isNaN(c[0])||isNaN(c[1]))return;
     let name=info.name;
     if(w<22&&name.length>6)return;
-    if(w<50&&name.length>12)name=name.split(" ").map(p=>p[0]+".").join("");
+    if(w<50&&name.length>20)name=name.split(" ").map(p=>p[0]+".").join("");
     const offsets={"Cote dIvoire":[0,-12],"Ghana":[8,10],"Benin":[-8,-8],"Guinea-Bissau":[0,0],"Sierra Leone":[0,0]};const off=offsets[info.name]||[0,0];const fs=Math.max(6.5,Math.min(w/(name.length*0.7),h/2.8,13));
     const tw=name.length*fs*0.63+10,th=fs+7;
     g.append("rect").attr("x",c[0]+off[0]-tw/2).attr("y",c[1]+off[1]-th/2).attr("width",tw).attr("height",th).attr("rx",2).attr("fill","#0a0a06").attr("opacity",0.85).attr("pointer-events","none");
