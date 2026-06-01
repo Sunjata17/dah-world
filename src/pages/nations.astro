@@ -171,12 +171,12 @@ document.getElementById("zout").onclick=()=>svg.transition().duration(300).call(
 document.getElementById("zreset").onclick=()=>svg.transition().duration(400).call(zoom.transform,d3.zoomIdentity);
 d3.json("/countries-110m.json").then(world=>{
   const all=topojson.feature(world,world.objects.countries);
-  const africa=all.features.filter(f=>CD[String(f.id)]);
-  g.selectAll("path.cp").data(africa).join("path").attr("class","cp").attr("d",pathGen).attr("fill",d=>{const i=CD[String(d.id)];return i?i.color:"#4a6a4a";})
-  .on("mouseover",function(e,d){const i=CD[String(d.id)];if(i){d3.select(this).attr("fill","#F5D080");showCard(e,i);}})
+  const africa=all.features.filter(f=>CD[String(parseInt(f.id))]);
+  g.selectAll("path.cp").data(africa).join("path").attr("class","cp").attr("d",pathGen).attr("fill",d=>{const i=CD[String(parseInt(d.id))];return i?i.color:"#4a6a4a";})
+  .on("mouseover",function(e,d){const i=CD[String(parseInt(d.id))];if(i){d3.select(this).attr("fill","#F5D080");showCard(e,i);}})
   .on("mousemove",function(e){posCard(e);})
-  .on("mouseout",function(e,d){const i=CD[String(d.id)];if(i)d3.select(this).attr("fill",i.color);hcard.style.display="none";})
-  .on("click",function(e,d){const i=CD[String(d.id)];if(i)window.location.href="/nations/"+i.name.toLowerCase().replace(/\s+/g,"-").replace(/[^a-z0-9-]/g,"");});
+  .on("mouseout",function(e,d){const i=CD[String(parseInt(d.id))];if(i)d3.select(this).attr("fill",i.color);hcard.style.display="none";})
+  .on("click",function(e,d){const i=CD[String(parseInt(d.id))];if(i)window.location.href="/nations/"+i.name.toLowerCase().replace(/\s+/g,"-").replace(/[^a-z0-9-]/g,"");});
   africa.forEach(f=>{
     const info=CD[String(f.id)];if(!info)return;
     const b=pathGen.bounds(f);const w=b[1][0]-b[0][0],h=b[1][1]-b[0][1];
