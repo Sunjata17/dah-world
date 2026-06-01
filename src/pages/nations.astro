@@ -1,0 +1,67 @@
+﻿---
+import PetersMap from '../components/PetersMap.astro';
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nations — DAH World</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d0f; color: #e8dcc8; font-family: 'IM Fell English', serif; min-height: 100vh; }
+    header { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 3rem; border-bottom: 1px solid #3a2e1e; }
+    .logo { font-family: 'Cinzel', serif; font-size: 1.4rem; letter-spacing: 0.15em; color: #c9a84c; text-decoration: none; }
+    nav a { color: #e8dcc8; text-decoration: none; margin-left: 2rem; font-size: 0.95rem; opacity: 0.7; transition: opacity 0.2s; }
+    nav a:hover { opacity: 1; }
+    nav a.active { opacity: 1; color: #c9a84c; }
+    .hero { text-align: center; padding: 5rem 2rem 3rem; }
+    .hero h1 { font-family: 'Cinzel', serif; font-size: clamp(2rem, 5vw, 4rem); color: #c9a84c; letter-spacing: 0.1em; margin-bottom: 1rem; }
+    .hero p { font-size: 1.1rem; font-style: italic; opacity: 0.75; max-width: 600px; margin: 0 auto; line-height: 1.7; }
+    .map-section { padding: 2rem 3rem 5rem; max-width: 1400px; margin: 0 auto; }
+    .map-label { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.2em; color: #c9a84c; opacity: 0.6; text-align: center; margin-bottom: 1.5rem; text-transform: uppercase; }
+    .nations-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 4rem; }
+    .nation-card { background: #161618; border: 1px solid #2a2018; border-radius: 4px; padding: 1.5rem; cursor: pointer; transition: border-color 0.2s, transform 0.2s; }
+    .nation-card:hover { border-color: #c9a84c; transform: translateY(-2px); }
+    .nation-card .flag { font-size: 2.5rem; margin-bottom: 0.75rem; }
+    .nation-card h3 { font-family: 'Cinzel', serif; font-size: 1rem; color: #c9a84c; margin-bottom: 0.4rem; }
+    .nation-card p { font-size: 0.85rem; opacity: 0.6; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/" class="logo">DAH WORLD</a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/nations" class="active">Nations</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <h1>Nations of the World</h1>
+    <p>Explore every sovereign state as it truly appears — mapped with equal-area precision on the Peters projection.</p>
+  </section>
+  <section class="map-section">
+    <p class="map-label">Peters Equal-Area Projection</p>
+    <PetersMap />
+    <div class="nations-grid">
+      {[
+        { flag: '🇧🇷', name: 'Brazil', desc: 'Largest nation in South America, spanning the Amazon basin.' },
+        { flag: '🇮🇳', name: 'India', desc: 'Ancient civilization, world\'s most populous democracy.' },
+        { flag: '🇳🇬', name: 'Nigeria', desc: 'Africa\'s most populous nation, the Giant of Africa.' },
+        { flag: '🇦🇴', name: 'Angola', desc: 'Southern African nation rich in oil, diamonds, and history.' },
+        { flag: '🇲🇷', name: 'Mauritania', desc: 'Where the Sahara meets the Atlantic on Africa\'s northwest coast.' },
+        { flag: '🇩🇿', name: 'Algeria', desc: 'Africa\'s largest country by area, gateway between Africa and Europe.' },
+        { flag: '🇧🇼', name: 'Botswana', desc: 'Landlocked southern African nation, home to the Kalahari.' },
+        { flag: '🇨🇳', name: 'China', desc: 'Millennia of history, the world\'s second-largest economy.' },
+      ].map(n => (
+        <div class="nation-card">
+          <div class="flag">{n.flag}</div>
+          <h3>{n.name}</h3>
+          <p>{n.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</body>
+</html>
