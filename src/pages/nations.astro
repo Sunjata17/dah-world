@@ -178,7 +178,7 @@ d3.json("/countries-110m.json").then(world=>{
   .on("mouseout",function(e,d){const i=CD[String(parseInt(d.id))];if(i)d3.select(this).attr("fill",i.color);hcard.style.display="none";})
   .on("click",function(e,d){const i=CD[String(parseInt(d.id))];if(i)window.location.href="/nations/"+i.name.toLowerCase().replace(/\s+/g,"-").replace(/[^a-z0-9-]/g,"");});
   africa.forEach(f=>{
-    const info=CD[String(f.id)];if(!info)return;
+    const info=CD[String(parseInt(f.id))];if(!info)return;
     const b=pathGen.bounds(f);const w=b[1][0]-b[0][0],h=b[1][1]-b[0][1];
     if(w<14||h<10)return;
     const c=pathGen.centroid(f);if(isNaN(c[0])||isNaN(c[1]))return;
