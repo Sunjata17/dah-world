@@ -1,203 +1,279 @@
 ---
 ---
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>DAH World — Deeper African History</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Space+Mono:wght@400;700&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #0a0a06; color: #f0ebe0; font-family: 'Source Serif 4', serif; }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>DAH World — The World's Authority on African History</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Playfair+Display:wght@700;900&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a0a06;color:#f0ebe0;font-family:'Source Serif 4',serif;min-height:100vh;overflow-x:hidden}
 
-    .top-bar {
-      background: #B8860B;
-      padding: 5px 24px;
-      display: flex;
-      justify-content: space-between;
-      font-family: 'Space Mono', monospace;
-      font-size: 10px;
-      color: #0a0a06;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-    }
+.top-bar{background:#B8860B;padding:6px 24px;display:flex;justify-content:space-between;align-items:center;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#0a0a06;font-weight:700}
 
-    nav {
-      background: #0a0a06;
-      border-bottom: 1px solid #C4873A44;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      height: 60px;
-      gap: 0;
-    }
+nav{background:#0a0a06;border-bottom:1px solid #B8860B33;padding:0 24px;display:flex;align-items:center;height:64px;gap:0}
+.nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:#f0ebe0;letter-spacing:-0.02em;margin-right:24px;flex-shrink:0;text-decoration:none}
+.nav-logo span{color:#B8860B}
+.nav-links{display:flex;gap:0;flex:1;list-style:none;flex-wrap:nowrap;overflow-x:auto}
+.nav-links li a{display:block;padding:8px 11px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.06em;color:#a09880;text-decoration:none;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap}
+.nav-links li a:hover,.nav-links li a.active{color:#B8860B;border-bottom-color:#B8860B}
+.nav-cta{background:#B8860B;color:#0a0a06 !important;padding:8px 16px !important;font-weight:700 !important;border-bottom:none !important;border-radius:2px}
+.nav-cta:hover{background:#D4A020 !important}
 
-    .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      font-weight: 900;
-      color: #f0ebe0;
-      margin-right: 28px;
-      flex-shrink: 0;
-      letter-spacing: -0.02em;
-    }
+.hero{position:relative;min-height:480px;background:linear-gradient(135deg,#1a0a00 0%,#0a0a06 40%,#0d1a0a 100%);display:flex;align-items:flex-end;padding:40px 24px;overflow:hidden}
+.hero-bg{position:absolute;top:0;left:0;right:0;bottom:0;opacity:0.06;display:flex;align-items:center;justify-content:flex-end;padding-right:40px}
+.hero-badge{position:absolute;top:24px;right:24px;background:#B8860B;color:#0a0a06;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.1em;padding:6px 12px;text-transform:uppercase}
+.hero-eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.15em;color:#B8860B;text-transform:uppercase;margin-bottom:12px}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,3.5rem);font-weight:900;line-height:1.05;color:#f0ebe0;margin-bottom:16px}
+.hero-title span{color:#B8860B}
+.hero-sub{font-size:16px;font-weight:300;color:#a09880;line-height:1.6;max-width:480px;margin-bottom:24px}
+.hero-content{position:relative;z-index:2;max-width:600px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-gold{background:#B8860B;color:#0a0a06;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.1em;padding:12px 24px;text-decoration:none;text-transform:uppercase;display:inline-block}
+.btn-gold:hover{background:#D4A020}
+.btn-outline{border:1px solid #B8860B44;color:#B8860B;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.1em;padding:12px 24px;text-decoration:none;text-transform:uppercase;display:inline-block}
+.btn-outline:hover{border-color:#B8860B;background:#B8860B11}
 
-    .nav-logo span { color: #C4873A; }
+.ticker-wrap{background:#0f0e08;border-top:1px solid #B8860B22;border-bottom:1px solid #B8860B22;padding:10px 0;overflow:hidden;white-space:nowrap}
+.ticker{display:inline-block;animation:ticker 40s linear infinite;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#B8860B}
+.ticker span{margin:0 2rem;opacity:0.7}
+.ticker span strong{opacity:1;color:#f0ebe0}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-    .nav-links {
-      display: flex;
-      list-style: none;
-      flex: 1;
-      gap: 0;
-      overflow-x: auto;
-    }
+.section{padding:40px 24px}
+.sec-label{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#B8860B;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.sec-label::after{content:'';flex:1;height:1px;background:#B8860B44}
 
-    .nav-links li a {
-      display: block;
-      padding: 8px 12px;
-      font-family: 'Space Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.06em;
-      color: #7a6a50;
-      text-decoration: none;
-      text-transform: uppercase;
-      border-bottom: 2px solid transparent;
-      white-space: nowrap;
-    }
+.continent-bar{display:flex;gap:4px;padding:0 24px 0;flex-wrap:wrap;margin-bottom:0}
+.region-btn{background:#0f0e08;border:1px solid #2a2010;color:#a09880;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:0.1em;padding:6px 14px;cursor:pointer;text-transform:uppercase;transition:all 0.2s}
+.region-btn:hover,.region-btn.active{background:#B8860B;color:#0a0a06;border-color:#B8860B}
 
-    .nav-links li a:hover { color: #C4873A; border-bottom-color: #C4873A; }
-    .nav-links li a.active { color: #C4873A; border-bottom-color: #C4873A; }
+.featured-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:auto auto;gap:1px;background:#B8860B22;border:1px solid #B8860B22}
+.story-card{background:#0f0f09;padding:20px;position:relative;cursor:pointer;transition:background 0.2s}
+.story-card:hover{background:#141408}
+.story-card-img{width:100%;height:160px;background:#1a1408;margin-bottom:14px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.hero-card .story-card-img{height:220px}
+.country-pill{font-family:'Space Mono',monospace;font-size:8px;font-weight:700;letter-spacing:0.12em;color:#B8860B;text-transform:uppercase;margin-bottom:8px}
+.story-tag{display:inline-block;font-family:'Space Mono',monospace;font-size:8px;font-weight:700;letter-spacing:0.1em;padding:2px 8px;margin-bottom:10px;text-transform:uppercase}
+.tag-dna{background:#1a2a0a;color:#8aaa5a}
+.tag-stem{background:#0a1a2a;color:#5a9aba}
+.tag-art{background:#1a0a2a;color:#9a6aba}
+.tag-news{background:#2a0a0a;color:#ba6a5a}
+.tag-history{background:#2a1a0a;color:#B8860B}
+.story-headline{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:#f0ebe0;line-height:1.4;margin-bottom:10px}
+.hero-card .story-headline{font-size:20px}
+.story-meta{font-family:'Space Mono',monospace;font-size:9px;color:#4a4030;letter-spacing:0.08em}
 
-    .nav-cta {
-      background: #C4873A !important;
-      color: #0a0a06 !important;
-      font-weight: 700 !important;
-      border-radius: 2px;
-      border-bottom: none !important;
-    }
+.stats-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#B8860B22;border:1px solid #B8860B22;margin:0 24px 40px}
+.stat-cell{background:#0f0e08;padding:24px;text-align:center}
+.stat-n{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:#B8860B;line-height:1}
+.stat-l{font-family:'Space Mono',monospace;font-size:9px;color:#6a5a40;letter-spacing:0.12em;text-transform:uppercase;margin-top:6px}
 
-    .hero {
-      min-height: 500px;
-      background: #0a0a06;
-      display: flex;
-      align-items: flex-end;
-      padding: 60px 40px 48px;
-      position: relative;
-      border-bottom: 1px solid #C4873A22;
-    }
+.offers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#B8860B22;border:1px solid #B8860B22}
+.offer-card{background:#0f0e08;padding:28px 24px;position:relative}
+.offer-number{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:#B8860B22;line-height:1;margin-bottom:8px}
+.offer-tag{font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:#2a1a0a;color:#B8860B;display:inline-block;padding:3px 10px;margin-bottom:12px}
+.offer-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:#f0ebe0;margin-bottom:10px;line-height:1.3}
+.offer-desc{font-size:13px;color:#8a7a60;line-height:1.7;margin-bottom:16px}
+.offer-price{font-family:'Space Mono',monospace;font-size:9px;color:#B8860B;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:12px}
+.offer-cta{display:inline-block;background:#B8860B;color:#0a0a06;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.1em;padding:10px 20px;text-decoration:none;text-transform:uppercase}
+.offer-cta:hover{background:#D4A020}
+.offer-cta.outline{background:transparent;border:1px solid #B8860B;color:#B8860B}
+.offer-cta.outline:hover{background:#B8860B;color:#0a0a06}
+.offer-vip{border-top:3px solid #ffb347}
 
-    .hero-eyebrow {
-      font-family: 'Space Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      color: #C4873A;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    .hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 58px;
-      font-weight: 900;
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      color: #f0ebe0;
-      margin-bottom: 20px;
-    }
-
-    .hero-title span { color: #C4873A; }
-
-    .hero-sub {
-      font-size: 16px;
-      color: #8a7a60;
-      line-height: 1.65;
-      max-width: 520px;
-      font-weight: 300;
-    }
-
-    .ticker {
-      background: #C4873A;
-      padding: 10px 24px;
-      font-family: 'Space Mono', monospace;
-      font-size: 10px;
-      font-weight: 700;
-      color: #0a0a06;
-      letter-spacing: 0.06em;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-
-    .coming-soon {
-      text-align: center;
-      padding: 80px 24px;
-      font-family: 'Space Mono', monospace;
-      font-size: 11px;
-      color: #3a3020;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
-    .coming-soon span {
-      color: #C4873A;
-      font-size: 14px;
-      display: block;
-      margin-bottom: 12px;
-      font-family: 'Playfair Display', serif;
-      font-size: 24px;
-    }
-  </style>
+footer{background:#0f0e08;border-top:1px solid #B8860B22;padding:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;color:#f0ebe0}
+.footer-logo span{color:#B8860B}
+.footer-tagline{font-family:'Space Mono',monospace;font-size:9px;color:#4a4030;letter-spacing:0.12em;text-transform:uppercase}
+</style>
 </head>
 <body>
 
-  <div class="top-bar">
-    <span>COVERING ALL 55 AFRICAN NATIONS — WORLDWIDE</span>
-    <span>DR. JOHN TEACHES · DEEPER AFRICAN HISTORY</span>
+<div class="top-bar">
+  <span>COVERING ALL 55 AFRICAN NATIONS &mdash; WORLDWIDE</span>
+  <span>DR. JOHN TEACHES &middot; DEEPER AFRICAN HISTORY</span>
+</div>
+
+<nav>
+  <a href="/" class="nav-logo">DAH <span>&middot;</span> World</a>
+  <ul class="nav-links">
+    <li><a href="/" class="active">Home</a></li>
+    <li><a href="/nations">All 55 Nations</a></li>
+    <li><a href="/deep-history">Deep History</a></li>
+    <li><a href="/current-events">Current Events</a></li>
+    <li><a href="/dna-origins">DNA &amp; Origins</a></li>
+    <li><a href="/art-museums">Art &amp; Museums</a></li>
+    <li><a href="/stem">STEM</a></li>
+    <li><a href="/futbol">Futbol &#9917;</a></li>
+    <li><a href="/bookstore">Book Store</a></li>
+    <li><a href="/challenges">Challenges</a></li>
+    <li><a href="/community">Community</a></li>
+    <li><a href="https://drjohnteaches.samcart.com/products/deeper-african-history-fp" target="_blank" class="nav-cta">Enroll &mdash; $97/mo</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg">
+    <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" style="height:100%;max-width:500px">
+      <path d="M195 25 Q215 18 235 22 Q265 15 285 38 Q305 28 325 55 Q345 72 340 105 Q358 132 352 165 Q368 190 362 220 Q378 248 365 278 Q380 300 368 332 Q372 365 350 387 Q338 418 305 438 Q282 455 258 462 Q235 475 212 470 Q188 480 165 462 Q142 456 120 433 Q98 410 88 382 Q66 355 72 322 Q55 292 62 260 Q47 232 58 202 Q46 172 62 145 Q52 112 68 88 Q74 58 98 42 Q132 20 165 22 Z" fill="#B8860B" stroke="#B8860B" stroke-width="1"/>
+    </svg>
   </div>
-
-  <nav>
-    <div class="nav-logo">DAH <span>·</span> World</div>
-    <ul class="nav-links">
-      <li><a href="/" class="active">Home</a></li>
-      <li><a href="/nations">All 55 Nations</a></li>
-      <li><a href="/history">Deep History</a></li>
-      <li><a href="/news">Current Events</a></li>
-      <li><a href="/dna">DNA & Origins</a></li>
-      <li><a href="/art">Art & Museums</a></li>
-      <li><a href="/stem">STEM</a></li>
-      <li><a href="/futbol">Fútbol ⚽</a></li>
-      <li><a href="/books">Book Store</a></li>
-      <li><a href="/challenges">Challenges</a></li>
-      <li><a href="/community">Community</a></li>
-      <li><a href="/enroll" class="nav-cta">Enroll — $97/mo</a></li>
-    </ul>
-  </nav>
-
-  <div class="hero">
-    <div>
-      <div class="hero-eyebrow">Dr. John Teaches · Est. 2026</div>
-      <h1 class="hero-title">
-        The World's Authority<br>on <span>African History</span>
-      </h1>
-      <p class="hero-sub">
-        Fact-based, scholar-curated coverage of all 55 African nations —
-        history, culture, DNA origins, current events, art, and science.
-        Built for a worldwide audience.
-      </p>
+  <div class="hero-badge">EST. 2026</div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Dr. John Teaches &middot; Est. 2026</div>
+    <h1 class="hero-title">The World's Authority<br>on <span>African History</span></h1>
+    <p class="hero-sub">Fact-based, scholar-curated coverage of all 55 African nations — history, culture, DNA origins, current events, art, and science. Built for a worldwide audience.</p>
+    <div class="hero-btns">
+      <a href="/nations" class="btn-gold">Explore All 55 Nations</a>
+      <a href="https://drjohnteaches.samcart.com/products/deeper-african-history-fp" target="_blank" class="btn-outline">Enroll in DAH &rarr;</a>
     </div>
   </div>
+</div>
 
+<div class="ticker-wrap">
   <div class="ticker">
-    HISTORY FACT: The University of Timbuktu operated 600 years before Oxford was founded &nbsp;·&nbsp;
-    DNA: Modern human migration traces back 200,000+ years to Eastern Africa &nbsp;·&nbsp;
-    55 COUNTRIES · North · West · East · Central · Southern Africa &nbsp;·&nbsp;
-    NEW: Heritage Scholar VIP Retreat · St. Croix, US Virgin Islands · Limited Seats
+    <span><strong>HISTORY FACT:</strong> The University of Timbuktu operated 800 years before Oxford was founded</span>
+    <span><strong>DNA:</strong> Modern human migration traces back 200,000+ years to Eastern Africa</span>
+    <span><strong>55 COUNTRIES</strong> &middot; North &middot; West &middot; East &middot; Central &middot; Southern Africa</span>
+    <span><strong>NEW:</strong> Heritage Scholar VIP Retreat &middot; St. Croix, US Virgin Islands</span>
+    <span><strong>HISTORY FACT:</strong> The University of Timbuktu operated 800 years before Oxford was founded</span>
+    <span><strong>DNA:</strong> Modern human migration traces back 200,000+ years to Eastern Africa</span>
+    <span><strong>55 COUNTRIES</strong> &middot; North &middot; West &middot; East &middot; Central &middot; Southern Africa</span>
+    <span><strong>NEW:</strong> Heritage Scholar VIP Retreat &middot; St. Croix, US Virgin Islands</span>
   </div>
+</div>
 
-  <div class="coming-soon">
-    <span>DAH World is being built.</span>
-    Full launch coming soon — 55 nations, deep history, and the course that changes everything.
+<div class="continent-bar" style="padding:24px 24px 0">
+  <button class="region-btn active">All 55</button>
+  <button class="region-btn">North Africa</button>
+  <button class="region-btn">West Africa</button>
+  <button class="region-btn">East Africa</button>
+  <button class="region-btn">Central Africa</button>
+  <button class="region-btn">Southern Africa</button>
+  <button class="region-btn">Diaspora</button>
+</div>
+
+<div class="section">
+  <div class="sec-label">Latest Stories</div>
+  <div class="featured-grid">
+    <div class="story-card hero-card">
+      <div class="story-card-img">
+        <svg width="100%" height="100%" viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="220" fill="#1a1408"/>
+          <circle cx="150" cy="110" r="80" fill="none" stroke="#B8860B" stroke-width="0.5"/>
+          <circle cx="150" cy="110" r="55" fill="none" stroke="#B8860B" stroke-width="0.5"/>
+          <circle cx="150" cy="110" r="30" fill="none" stroke="#B8860B" stroke-width="0.5"/>
+          <line x1="70" y1="110" x2="230" y2="110" stroke="#B8860B" stroke-width="0.5"/>
+          <line x1="150" y1="30" x2="150" y2="190" stroke="#B8860B" stroke-width="0.5"/>
+          <polygon points="150,70 160,90 185,90 165,105 172,130 150,115 128,130 135,105 115,90 140,90" fill="#B8860B" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="country-pill">GHANA &middot; WEST AFRICA</div>
+      <div class="story-tag tag-dna">DNA &amp; Ancient Origins</div>
+      <div class="story-headline">New Genomic Research Confirms Ancient Migrations Across the Sahara: What This Means for African Identity</div>
+      <div class="story-meta">DR. JOHN &middot; 6 MIN READ &middot; STEM NEWS</div>
+    </div>
+    <div class="story-card">
+      <div class="story-card-img" style="height:100px">
+        <svg width="100%" height="100%" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="150" height="100" fill="#0d1a10"/>
+          <rect x="20" y="60" width="8" height="30" fill="#4CAF50" opacity="0.4"/>
+          <rect x="35" y="40" width="8" height="50" fill="#4CAF50" opacity="0.5"/>
+          <rect x="65" y="30" width="8" height="60" fill="#4CAF50" opacity="0.6"/>
+          <rect x="95" y="55" width="8" height="35" fill="#4CAF50" opacity="0.4"/>
+          <rect x="110" y="35" width="8" height="55" fill="#4CAF50" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="country-pill">ETHIOPIA</div>
+      <div class="story-tag tag-stem">STEM</div>
+      <div class="story-headline">Ethiopian Engineers Pioneer Drought-Resistant Architecture in the Horn of Africa</div>
+      <div class="story-meta">TODAY &middot; 3 MIN READ</div>
+    </div>
+    <div class="story-card">
+      <div class="story-card-img" style="height:100px">
+        <svg width="100%" height="100%" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="150" height="100" fill="#1a0d2e"/>
+          <circle cx="75" cy="50" r="30" fill="none" stroke="#9c6fe4" stroke-width="1" opacity="0.6"/>
+          <circle cx="75" cy="50" r="8" fill="#9c6fe4" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="country-pill">NIGERIA</div>
+      <div class="story-tag tag-art">Art History</div>
+      <div class="story-headline">Benin Bronzes: The British Museum Negotiations That Could Change Everything</div>
+      <div class="story-meta">YESTERDAY &middot; 4 MIN READ</div>
+    </div>
+    <div class="story-card">
+      <div class="story-card-img" style="height:90px">
+        <svg width="100%" height="100%" viewBox="0 0 150 90" xmlns="http://www.w3.org/2000/svg">
+          <rect width="150" height="90" fill="#1a0d0d"/>
+          <path d="M20 45 Q50 20 75 45 Q100 70 130 45" stroke="#e46f6f" stroke-width="1.5" fill="none" opacity="0.7"/>
+        </svg>
+      </div>
+      <div class="country-pill">SOUTH AFRICA</div>
+      <div class="story-tag tag-news">Current Events</div>
+      <div class="story-headline">BRICS Expansion: How Africa's Economic Power Is Reshaping Global Trade</div>
+      <div class="story-meta">2 DAYS AGO &middot; 5 MIN READ</div>
+    </div>
+    <div class="story-card">
+      <div class="story-card-img" style="height:90px">
+        <svg width="100%" height="100%" viewBox="0 0 150 90" xmlns="http://www.w3.org/2000/svg">
+          <rect width="150" height="90" fill="#0d1a22"/>
+          <rect x="40" y="20" width="70" height="50" rx="2" fill="none" stroke="#6fa8e4" stroke-width="1" opacity="0.6"/>
+          <rect x="55" y="30" width="40" height="8" fill="#6fa8e4" opacity="0.3"/>
+        </svg>
+      </div>
+      <div class="country-pill">KENYA</div>
+      <div class="story-tag tag-history">History</div>
+      <div class="story-headline">The Hidden Libraries of East Africa: Swahili Manuscripts Predating Columbus</div>
+      <div class="story-meta">3 DAYS AGO &middot; 7 MIN READ</div>
+    </div>
   </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stat-cell"><div class="stat-n">55</div><div class="stat-l">Nations Covered</div></div>
+  <div class="stat-cell"><div class="stat-n">1.4B</div><div class="stat-l">People Represented</div></div>
+  <div class="stat-cell"><div class="stat-n">2M+</div><div class="stat-l">Years of History</div></div>
+</div>
+
+<div class="section">
+  <div class="sec-label">Dr. John's DAH Offers</div>
+  <div class="offers-grid">
+    <div class="offer-card">
+      <div class="offer-number">01</div>
+      <div class="offer-tag">Online Course</div>
+      <div class="offer-title">Deeper African History Course</div>
+      <div class="offer-desc">The definitive self-paced course covering ancient civilizations, DNA origins, suppressed history, and the truth about Africa's global contributions.</div>
+      <div class="offer-price">ENROLL NOW &rarr;</div>
+      <a class="offer-cta" href="https://drjohnteaches.samcart.com/products/deeper-african-history-fp" target="_blank">Get Instant Access</a>
+    </div>
+    <div class="offer-card">
+      <div class="offer-number">02</div>
+      <div class="offer-tag">Retreat &middot; St. Croix, USVI</div>
+      <div class="offer-title">Heritage Scholar Retreat</div>
+      <div class="offer-desc">An immersive in-person heritage retreat in the US Virgin Islands. Connect with history, community, and purpose in paradise.</div>
+      <div class="offer-price">LIMITED SEATS AVAILABLE</div>
+      <a class="offer-cta outline" href="https://drjohnteaches.samcart.com/products/deeper-african-history-heritage-scholar-retreat-on-st-croix-us-virgin-islands" target="_blank">Reserve Your Seat</a>
+    </div>
+    <div class="offer-card offer-vip">
+      <div class="offer-number">03</div>
+      <div class="offer-tag" style="background:#2e1a00;color:#ffb347">VIP EXPERIENCE</div>
+      <div class="offer-title">Heritage Scholar VIP Retreat</div>
+      <div class="offer-desc">The ultimate Deeper African History experience. VIP access, exclusive sessions with Dr. John, and a transformative journey through heritage and identity.</div>
+      <div class="offer-price" style="color:#ffb347">VIP &middot; ST. CROIX, USVI</div>
+      <a class="offer-cta" style="background:#ffb347;color:#0a0a06" href="https://drjohnteaches.samcart.com/products/deeper-african-history-heritage-scholar-retreat-on-st-croix-us-virgin-islands-copy" target="_blank">Apply for VIP</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">DAH <span>&middot;</span> World</div>
+  <div class="footer-tagline">DEEPER AFRICAN HISTORY &middot; WORLDWIDE &middot; DR. JOHN TEACHES</div>
+  <div class="footer-tagline">ALL 55 NATIONS &middot; EST. 2026</div>
+</footer>
 
 </body>
 </html>
