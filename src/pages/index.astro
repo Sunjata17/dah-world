@@ -399,7 +399,7 @@ d3.json("/countries-110m.json").then(world=>{
     if(w<14||h<10)return;
     const c=pg.centroid(f);if(isNaN(c[0])||isNaN(c[1]))return;
     let name=info.name;if(w<22&&name.length>6)return;
-    if(w<50&&name.length>12)name=name.split(" ").map(p=>p[0]+".").join("");
+    if(w<50&&name.length>20)name=name.split(" ").map(p=>p[0]+".").join("");
     const fs=Math.max(6.5,Math.min(w/(name.length*0.7),h/2.8,11));
     const tw=name.length*fs*0.63+8,th=fs+6;
     g.append("rect").attr("x",c[0]-tw/2).attr("y",c[1]-th/2).attr("width",tw).attr("height",th).attr("rx",2).attr("fill","#0a0a06").attr("opacity",0.85).attr("pointer-events","none");
