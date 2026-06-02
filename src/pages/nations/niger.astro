@@ -1,0 +1,267 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Niger — DAH World Country Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a0a06;color:#f0ebe0;font-family:'Source Serif 4',serif;min-height:100vh}
+.page-wrap{max-width:1440px;margin:0 auto}
+header{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 2rem;border-bottom:1px solid #3a2e18;background:#0a0a06}
+.logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:#f0ebe0;text-decoration:none}
+.logo span{color:#C4873A}
+nav a{color:#f0ebe0;text-decoration:none;margin-left:2rem;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;opacity:0.5;transition:opacity 0.2s}
+nav a:hover{opacity:1;color:#C4873A}
+.back{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.14em;color:#C4873A;text-decoration:none;text-transform:uppercase;display:block;padding:1.5rem 2rem 0;opacity:0.7}
+.back:hover{opacity:1}
+.hero{background:#0f0e08;border-bottom:1px solid #2a2010;padding:28px 32px 24px}
+.hero-eyebrow{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.18em;color:#C4873A;text-transform:uppercase;margin-bottom:12px}
+.hero-top{display:flex;align-items:flex-start;gap:20px;margin-bottom:20px}
+.hero-flag{width:100px;height:66px;object-fit:cover;border:2px solid #3a2e18;flex-shrink:0}
+.hero-text h1{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:#f0ebe0;line-height:1.05;margin-bottom:6px}
+.hero-text h1 span{color:#C4873A}
+.hero-tagline{font-size:14px;color:#8a7a60;font-style:italic;line-height:1.6;max-width:560px}
+.stat-row{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:#2a2010;border:1px solid #2a2010}
+.stat{background:#0f0e08;padding:14px 10px;text-align:center}
+.stat-num{font-family:'Playfair Display',serif;font-size:17px;font-weight:900;color:#C4873A;line-height:1}
+.stat-label{font-family:'Space Mono',monospace;font-size:8px;color:#5a4a30;letter-spacing:0.1em;text-transform:uppercase;margin-top:4px}
+.content{padding:0 32px 40px;max-width:1100px}
+.section{margin-top:32px}
+.sec-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.2em;color:#C4873A;text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.sec-label::after{content:'';flex:1;height:1px;background:#C4873A33}
+.nuggets{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.nugget{background:#0f0e08;border:1px solid #1e1a0e;border-left:3px solid #C4873A;padding:16px 18px}
+.nugget-era{font-family:'Space Mono',monospace;font-size:8px;color:#C4873A;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px}
+.nugget h3{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:#f0ebe0;margin-bottom:8px;line-height:1.3}
+.nugget p{font-size:13px;color:#8a7a60;line-height:1.7}
+.news-grid{display:flex;flex-direction:column;gap:8px}
+.news-item{background:#0f0e08;border:1px solid #1e1a0e;padding:14px 18px;display:flex;gap:14px;align-items:flex-start}
+.news-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:6px}
+.dot-red{background:#8B2020}
+.dot-amber{background:#C4873A}
+.dot-green{background:#3a6a2a}
+.news-item h4{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#f0ebe0;margin-bottom:4px;line-height:1.3}
+.news-item p{font-size:12px;color:#7a6a50;line-height:1.6}
+.news-tag{display:inline-block;font-family:'Space Mono',monospace;font-size:8px;color:#C4873A;background:#C4873A18;border:1px solid #C4873A33;padding:2px 8px;letter-spacing:0.08em;margin-bottom:6px}
+.factbook{background:#0f0e08;border:1px solid #1e1a0e;padding:20px}
+.fb-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.fb-col{padding:0 14px}
+.fb-col:first-child{border-right:1px solid #1a1508;padding-left:0}
+.fb-row{display:flex;justify-content:space-between;border-bottom:1px solid #1a1508;padding:9px 0;font-size:12px;gap:12px}
+.fb-row:last-child{border-bottom:none}
+.fb-key{color:#C4873A;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.05em;font-weight:700;flex-shrink:0}
+.fb-val{color:#f0ebe0;font-weight:600;text-align:right;line-height:1.4}
+.books{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.book{background:#0f0e08;border:1px solid #1e1a0e;padding:16px;display:flex;gap:12px}
+.book-spine{width:5px;border-radius:1px;flex-shrink:0;align-self:stretch;background:#C4873A}
+.book-info{flex:1}
+.book-title{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:#ffffff;margin-bottom:4px;line-height:1.3}
+.book-author{font-family:'Space Mono',monospace;font-size:9px;color:#E8A84A;letter-spacing:0.08em;font-weight:700;margin-bottom:6px}
+.book-note{font-size:11px;color:#c8b898;line-height:1.55;margin-bottom:10px}
+.book-btn{display:inline-block;background:#C4873A;color:#0a0a06;font-family:'Space Mono',monospace;font-size:8px;font-weight:700;letter-spacing:0.1em;padding:6px 12px;text-transform:uppercase;text-decoration:none}
+.book-btn:hover{background:#E8A84A}
+.dah-banner{background:#C4873A;padding:20px 24px;margin-top:32px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.dah-banner-text{font-family:'Playfair Display',serif;font-size:18px;font-weight:900;color:#0a0a06;line-height:1.3}
+.dah-banner-sub{display:block;font-family:'Space Mono',monospace;font-size:9px;font-weight:400;letter-spacing:0.12em;margin-top:4px;color:#0a0a0688}
+.dah-btn{background:#0a0a06;color:#C4873A;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.1em;padding:14px 22px;text-decoration:none;text-transform:uppercase;white-space:nowrap;flex-shrink:0}
+.dah-btn:hover{background:#1a1408}
+.pricing-note{font-family:'Space Mono',monospace;font-size:10px;color:#0a0a0677;margin-top:6px}
+.pricing-note strong{color:#0a0a06}
+footer{background:#0f0e08;border-top:1px solid #2a2010;padding:24px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:40px}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;color:#f0ebe0}
+.footer-logo span{color:#C4873A}
+.footer-tagline{font-family:'Space Mono',monospace;font-size:9px;color:#4a4030;letter-spacing:0.12em;text-transform:uppercase}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+<header>
+  <a href="/" class="logo">DAH <span>World</span></a>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/nations">Nations</a>
+    <a href="https://drjohnteaches.samcart.com/products/deeper-african-history-fp" target="_blank">Enroll &mdash; $97/mo</a>
+  </nav>
+</header>
+<a href="/nations" class="back">&larr; Back to All Nations</a>
+<div class="hero">
+  <div class="hero-eyebrow">DAH World &middot; West Africa &middot; Country Profile</div>
+  <div class="hero-top">
+    <img class="hero-flag" src="https://flagcdn.com/w160/ne.png" alt="Niger flag"/>
+    <div class="hero-text">
+      <h1>Niger &mdash; <span>Land of Ancient Empires</span></h1>
+      <div class="hero-tagline">Where the Songhai ruled, where Agadez gleamed gold, where the Sahara held its secrets &mdash; and where the world's uranium powers French lights while Nigeriens live in the dark.</div>
+    </div>
+  </div>
+  <div class="stat-row">
+    <div class="stat"><div class="stat-num">25M</div><div class="stat-label">Population</div></div>
+    <div class="stat"><div class="stat-num">1.27M</div><div class="stat-label">Sq Km</div></div>
+    <div class="stat"><div class="stat-num">Niamey</div><div class="stat-label">Capital</div></div>
+    <div class="stat"><div class="stat-num">2023</div><div class="stat-label">Last Coup</div></div>
+    <div class="stat"><div class="stat-num">4th</div><div class="stat-label">Uranium Reserve</div></div>
+  </div>
+</div>
+<div class="content">
+  <div class="section">
+    <div class="sec-label">Deep History Nuggets &mdash; Dr. John's Picks</div>
+    <div class="nuggets">
+      <div class="nugget">
+        <div class="nugget-era">10,000 BCE &mdash; Green Sahara</div>
+        <h3>When the Sahara Was a Savanna</h3>
+        <p>The land we call Niger was once a lush, green savanna teeming with hippos, crocodiles, and cattle. Cave paintings in the Air Mountains document this lost world &mdash; proof that African civilizations flourished where only sand dunes stand today. Climate change, not conquest, erased it.</p>
+      </div>
+      <div class="nugget">
+        <div class="nugget-era">1449 CE &mdash; Sultanate of Agadez</div>
+        <h3>Agadez: The Paris of the Sahara</h3>
+        <p>The Sultanate of Agadez was the Tuareg world's crown jewel &mdash; a crossroads where salt from Bilma, gold from the south, and manuscripts from Timbuktu all changed hands. Its iconic mud-brick minaret, the tallest mud structure in the world, still stands. UNESCO calls it a World Heritage Site.</p>
+      </div>
+      <div class="nugget">
+        <div class="nugget-era">1464&ndash;1591 CE &mdash; Songhai Empire</div>
+        <h3>The Songhai Empire: Africa's Forgotten Superpower</h3>
+        <p>At its peak under Askia Muhammad I (1493&ndash;1528), the Songhai Empire stretched 2,000 miles across West Africa &mdash; larger than Western Europe. Gao, its capital on the Niger River, was a city of 75,000 when London had 50,000. It fell not to Europeans, but to Moroccan cannons in 1591.</p>
+      </div>
+      <div class="nugget">
+        <div class="nugget-era">1591 CE &mdash; Battle of Tondibi</div>
+        <h3>The Day Morocco Destroyed the Greatest African Empire</h3>
+        <p>Morocco's Sultan Ahmad al-Mansur sent 4,000 soldiers armed with gunpowder across the Sahara to destroy Songhai. Outnumbered 10-to-1 but armed with muskets against spears. Songhai fell, Timbuktu was sacked, and 700,000 manuscripts scattered. This is the history they never taught.</p>
+      </div>
+      <div class="nugget">
+        <div class="nugget-era">700&ndash;1900 CE &mdash; Kanem-Bornu</div>
+        <h3>Kanem-Bornu: 1,000 Years of African Kingship</h3>
+        <p>Eastern Niger sat at the heart of the Kanem-Bornu Empire &mdash; founded around 700 CE and surviving until 1900. It maintained diplomatic relations with North Africa, the Ottoman Empire, and 16th-century Europe. A thousand years of Black sovereignty.</p>
+      </div>
+      <div class="nugget">
+        <div class="nugget-era">1890&ndash;1960 CE &mdash; French Colonization</div>
+        <h3>How France Deliberately Kept Niger Poor</h3>
+        <p>When France colonized Niger, they inherited one of the wealthiest trade corridors in West Africa &mdash; and systematically dismantled it. Forced labor, extraction without reinvestment, and deliberate suppression of Arabic literacy left a 37% literacy rate at independence. This was policy, not poverty.</p>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="sec-label">Current Events &mdash; What's Happening Now</div>
+    <div class="news-grid">
+      <div class="news-item">
+        <div class="news-dot dot-red"></div>
+        <div>
+          <div class="news-tag">Political</div>
+          <h4>2023 Military Coup &mdash; ECOWAS Standoff Continues</h4>
+          <p>In July 2023, Niger's military ousted President Mohamed Bazoum. ECOWAS threatened intervention; it never came. The junta expelled French troops, closed French bases, and pivoted toward Russia's Wagner Group. A new chapter in West African sovereignty &mdash; or a new form of dependency?</p>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-dot dot-red"></div>
+        <div>
+          <div class="news-tag">Security</div>
+          <h4>IS Sahel Claims Airport Attack in Niamey &mdash; January 2026</h4>
+          <p>The Islamic State in the Sahel claimed a deadly attack on Niamey's airport in late January 2026. Rival jihadist groups JNIM and IS Sahel have been fighting each other as well as the government, creating a complex security crisis in the Tillaberi region.</p>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-dot dot-amber"></div>
+        <div>
+          <div class="news-tag">Economy</div>
+          <h4>World Bank Projects 6.7% GDP Growth for 2026&ndash;2027</h4>
+          <p>Despite political turmoil, oil production nearing 106,000 barrels per day is driving growth. A $400M oil-backed loan repayment in mid-2026 could reduce extreme poverty by 440,000 people by 2027.</p>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-dot dot-amber"></div>
+        <div>
+          <div class="news-tag">Geopolitics</div>
+          <h4>Uranium Sovereignty: Niger Suspends French Exports</h4>
+          <p>Post-coup Niger suspended uranium and gold exports to France. France's nuclear industry depends on Niger's ore and is scrambling for alternatives. African resources for African people.</p>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-dot dot-green"></div>
+        <div>
+          <div class="news-tag">Culture</div>
+          <h4>Agadez Listed Among World's Endangered Heritage Sites</h4>
+          <p>The ancient Sultanate of Agadez &mdash; its mosque, mud-brick architecture, Tuareg cultural heritage &mdash; faces climate and conflict threats. A living monument to 600 years of African urban genius.</p>
+        </div>
+      </div>
+    </div>
+  </div>  <div class="section">
+    <div class="sec-label">National Profile &mdash; Key Data</div>
+    <div class="factbook">
+      <div class="fb-grid">
+        <div class="fb-col">
+          <div class="fb-row"><span class="fb-key">Official Name</span><span class="fb-val">Republic of Niger</span></div>
+          <div class="fb-row"><span class="fb-key">Independence</span><span class="fb-val">Aug 3, 1960 (from France)</span></div>
+          <div class="fb-row"><span class="fb-key">Ethnic Groups</span><span class="fb-val">Hausa 53%, Zarma 21%, Tuareg 10%, Fula 10%</span></div>
+          <div class="fb-row"><span class="fb-key">Languages</span><span class="fb-val">French (official), Hausa, Zarma, Tamasheq, Kanuri</span></div>
+          <div class="fb-row"><span class="fb-key">Religion</span><span class="fb-val">Islam 99.3%</span></div>
+        </div>
+        <div class="fb-col">
+          <div class="fb-row"><span class="fb-key">Terrain</span><span class="fb-val">Desert plains, hills, mountains</span></div>
+          <div class="fb-row"><span class="fb-key">Key Resource</span><span class="fb-val">Uranium (world's 4th largest reserve)</span></div>
+          <div class="fb-row"><span class="fb-key">GDP Per Capita</span><span class="fb-val">~$590 USD</span></div>
+          <div class="fb-row"><span class="fb-key">Literacy Rate</span><span class="fb-val">37% &mdash; legacy of colonial neglect</span></div>
+          <div class="fb-row"><span class="fb-key">Life Expectancy</span><span class="fb-val">63 years</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="sec-label">Affiliate Book Store &mdash; Dr. John's Curated Picks</div>
+    <div class="books">
+      <div class="book">
+        <div class="book-spine"></div>
+        <div class="book-info">
+          <div class="book-title">The Songhai Empire: A Captivating Guide to One of the Largest States of Medieval West Africa</div>
+          <div class="book-author">Captivating History</div>
+          <div class="book-note">The most accessible entry point &mdash; an empire larger than Western Europe, built on the Niger River. Essential DAH reading for every student.</div>
+          <a class="book-btn" href="https://www.amazon.com/Songhai-Empire-Captivating-Largest-Medieval/dp/1637165919" target="_blank">Buy on Amazon &rarr;</a>
+        </div>
+      </div>
+      <div class="book">
+        <div class="book-spine" style="background:#8B5A2B"></div>
+        <div class="book-info">
+          <div class="book-title">Timbuktu and the Songhay Empire: Al-Sa'di's Ta'rikh Al-Sudan Down to 1613</div>
+          <div class="book-author">John Hunwick (translator)</div>
+          <div class="book-note">The primary source &mdash; a 17th-century Arabic chronicle of Songhai and Timbuktu. This is what Dr. John uses in the classroom. Academic gold.</div>
+          <a class="book-btn" href="https://www.amazon.com/Timbuktu-Songhay-Empire-Contemporary-Civilization/dp/9004112073" target="_blank">Buy on Amazon &rarr;</a>
+        </div>
+      </div>
+      <div class="book">
+        <div class="book-spine" style="background:#D4A055"></div>
+        <div class="book-info">
+          <div class="book-title">A History of Niger</div>
+          <div class="book-author">John Galea</div>
+          <div class="book-note">Covers the full arc &mdash; Green Sahara through Songhai Empire, French colonial conquest, independence, and the modern uranium sovereignty debate.</div>
+          <a class="book-btn" href="https://www.amazon.com/History-Niger-John-Galea/dp/B0FNR94YXF" target="_blank">Buy on Amazon &rarr;</a>
+        </div>
+      </div>
+      <div class="book">
+        <div class="book-spine" style="background:#A06828"></div>
+        <div class="book-info">
+          <div class="book-title">SONGHAI EMPIRE: The Untold Story of Gold, Power, and Conquest in West Africa</div>
+          <div class="book-author">Sarah Lambert</div>
+          <div class="book-note">Written for a general audience &mdash; compelling narrative of how Songhai became the greatest empire medieval Africa ever produced. Perfect for new DAH readers.</div>
+          <a class="book-btn" href="https://www.amazon.com/SONGHAI-EMPIRE-Untold-Conquest-Empires/dp/B0GWZVQKFH" target="_blank">Buy on Amazon &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dah-banner">
+    <div>
+      <div class="dah-banner-text">Want the DEEP dive on Niger's history?
+        <span class="dah-banner-sub">Dr. John's Deeper African History Course covers the Songhai Empire, Timbuktu's manuscripts, and the Saharan trade networks in full detail.</span>
+      </div>
+      <div class="pricing-note">Or <strong>$797 one-time</strong> &mdash; full lifetime access</div>
+    </div>
+    <a class="dah-btn" href="https://drjohnteaches.samcart.com/products/deeper-african-history-fp" target="_blank">Enroll in DAH &rarr;</a>
+  </div>
+</div>
+<footer>
+  <div class="footer-logo">DAH <span>&middot;</span> World</div>
+  <div class="footer-tagline">Deeper African History &middot; Dr. John Teaches</div>
+  <div class="footer-tagline">All 55 Nations &middot; Est. 2026</div>
+</footer>
+</div>
+</body>
+</html>
